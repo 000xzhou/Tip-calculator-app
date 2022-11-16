@@ -1,0 +1,345 @@
+:root {
+    --clr-buttons-n-box: hsl(183, 100%, 15%);
+    --clr-active-button-text: hsl(183, 100%, 15%);
+    --clr-button-text: hsl(189, 41%, 97%);
+    --clr-inner-bg: hsl(189, 41%, 97%);
+    --clr-active-button: hsl(172, 67%, 45%);
+    --clr-bg: hsl(185, 41%, 84%);
+    --clr-hover: hsl(173, 61%, 77%);
+}
+
+body {
+    background: var(--clr-bg);
+    height: 100vh;
+
+    font-size: 24px;
+    font-family: 'Space Mono', monospace;
+    position: relative;
+    display: grid;
+    place-content: center;
+    // gap: 2em;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.container {
+    background-color: var(--clr-inner-bg);
+    display: grid;
+
+    place-content: center;
+
+}
+
+@media(max-width: 50em) {
+
+    .input-area {
+        padding-top: .5rem;
+    }
+
+    .btn-grid {
+        grid-template-columns: repeat(2, minmax(1rem, 1fr));
+
+    }
+}
+
+@media(min-width: 50em) {
+    .btn-grid {
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+    }
+
+    .container {
+        grid-template-columns: repeat(2, minmax(25rem, 1fr));
+        gap: 2em;
+    }
+}
+
+// input --------------------------------------------------
+input {
+    border: none;
+}
+
+[data-tip],
+input,
+button:disabled,
+.reset,
+.tip-amount-text .total-text,
+#tip-amount,
+#total-amount {
+    font-weight: 700;
+}
+
+#tip-amount,
+#total-amount {
+    color: var(--clr-active-button);
+}
+
+[data-tip],
+input,
+button:disabled,
+.reset {
+    border-radius: 5px;
+    padding: .7rem 2rem;
+    font-size: 16px;
+}
+
+[data-tip] {
+    color: var(--clr-button-text);
+    background-color: var(--clr-buttons-n-box);
+    border: 1px solid var(--clr-buttons-n-box);
+    cursor: pointer;
+}
+
+[data-tip]::after {
+    content: "%";
+}
+
+.error+input,
+.error+div input {
+    border: 2px solid red;
+}
+
+
+.error::after {
+    content: "Number need to be above 0";
+    color: red;
+    font-size: 14px;
+    float: right;
+}
+
+input:focus-visible,
+[data-tip]:focus-visible {
+    outline-color: var(--clr-active-button);
+}
+
+.reset {
+    background-color: var(--clr-active-button);
+    // border-color: var(--clr-active-button);
+    cursor: pointer;
+    // color: var(--clr-active-button-text);
+}
+
+::placeholder {
+    color: var(--clr-buttons-n-box);
+    text-align: right;
+}
+
+// Hover active and :disabled -------------------------------------------
+button:disabled {
+    background-color: var(--clr-buttons-n-box);
+    // border-color: black;
+    // color: black;
+    cursor: not-allowed;
+}
+
+.active[data-tip] {
+    color: black;
+    background-color: var(--clr-active-button);
+    border-color: var(--clr-active-button);
+}
+
+button:disabled:hover {
+    color: rgba(0, 0, 0, 0.288);
+    background-color: var(--clr-buttons-n-box);
+    // outline: none;
+}
+
+button:hover {
+    background-color: var(--clr-hover);
+    border-color: var(--clr-hover);
+    color: var(--clr-active-button-text);
+
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+// outerbox ---------------------------------
+.output-area {
+    background-color: var(--clr-buttons-n-box);
+
+
+    #tip-amount,
+    #total-amount {
+        font-size: 30px;
+    }
+
+    .tip-amount-text,
+    .total-text {
+        color: var(--clr-button-text);
+    }
+
+
+}
+
+.text {
+    font-size: 1rem;
+    padding-block: 1rem;
+}
+
+.container {
+    border-radius: 20px;
+    padding: 1.5em;
+}
+
+.output-area {
+    padding: 1.5rem;
+    border-radius: 20px;
+    min-height: 80%;
+}
+
+.input-area {
+    min-height: 80%;
+}
+
+// inner --------------------------------
+
+.input-area {
+    padding-bottom: 1.5rem;
+
+
+    .bill,
+    .number-of-people {
+        position: relative;
+        display: grid;
+    }
+
+    input {
+        text-align: right;
+    }
+
+    .bill::before,
+    .number-of-people::before {
+        position: absolute;
+        bottom: 0;
+        left: 1em;
+    }
+
+    .bill::before {
+        content: url(images/icon-dollar.svg);
+
+    }
+
+    .number-of-people::before {
+        content: url(images/icon-person.svg);
+
+    }
+}
+
+.text {
+    margin-bottom: .5rem;
+}
+
+nav {
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--clr-buttons-n-box);
+}
+
+.btn-grid {
+    display: grid;
+    gap: .5em;
+}
+
+
+.output-area {
+    display: flex;
+    flex-direction: column;
+
+    button {
+        margin-top: auto;
+    }
+}
+
+.tip,
+.total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.total {
+    padding-bottom: 2rem;
+}
+
+.tip::after,
+.total::after {
+    content: "/ per person";
+    position: absolute;
+    font-size: 12px;
+    color: var(--clr-button-text);
+    top: 2.5rem;
+}
+
+// hide color theme text
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.color-picker {
+    fieldset {
+        border: 0;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+
+        input {
+            appearance: none;
+            width: 1rem;
+            height: 1rem;
+            border: 2px solid var(--radio-color);
+            border-radius: 50%;
+            padding: 0;
+        }
+
+        input#blue {
+            --radio-color: hsl(183, 100%, 15%);
+        }
+
+        input#pink {
+            --radio-color: #8DA2F8;
+        }
+
+        input:checked {
+            background-color: var(--radio-color);
+        }
+    }
+
+}
+
+:root:has(#pink:checked) {
+    --clr-buttons-n-box: #8DA2F8;
+    --clr-active-button-text: #8DA2F8;
+    --clr-button-text: hsl(189, 41%, 97%);
+    --clr-inner-bg: hsl(189, 41%, 97%);
+    --clr-active-button: #B3CBFE;
+    --clr-bg: #E4DAFE;
+    --clr-hover: #D5E1F6;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Tip calculator app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="center">
+    <nav>
+      <div role="heading" class="title">
+        <h1>spli tter</h1>
+      </div>
+
+      <form action="" class="color-picker">
+        <fieldset>
+          <legend class="visually-hidden">Pick a color scheme</legend>
+          <label class="visually-hidden" for="blue">Blue</label>
+          <input type="radio" name="theme" id="blue" checked>
+
+          <label class="visually-hidden" for="pink">Pink</label>
+          <input type="radio" name="theme" id="pink">
+        </fieldset>
+      </form>
+    </nav>
+    <main role="main" class="container">
+      <section aria-label="" class="input-area">
+        <div class="bill ">
+          <div class="bill-text text">Bill</div>
+          <input aria-label="Enter your bill here" data-bill type="number" placeholder="0">
+        </div>
+        <div class="select-tip ">
+          <div class="text select-text">Select Tip %</div>
+          <div class="btn-grid" aria-label="Enter your tip below">
+            <button role="button" aria-label="5%" data-tip>5</button>
+            <button role="button" aria-label="10%" data-tip>10</button>
+            <button role="button" aria-label="15%" data-tip>15</button>
+            <button role="button" aria-label="25%" data-tip>25</button>
+            <button role="button" aria-label="50%" data-tip>50</button>
+            <input aria-label="Enter your custom tip amount" class="custom-input" data-tip-custom type="number"
+              placeholder="Custom">
+          </div>
+        </div>
+        <div class="number-of-people">
+          <div class="people-text text">Number of People</div>
+          <input aria-label="Enter the number of people" data-people type="number" placeholder="0">
+        </div>
+      </section>
+      <section class="output-area">
+        <div class="tip">
+          <div class="tip-amount-text text">Tip Amount </div>
+          <div data-tip-per-person id="tip-amount">$0.00</div>
+        </div>
+        <div class="total">
+          <div class="total-text text">Total </div>
+          <div data-total-per-person id="total-amount">$0.00</div>
+        </div>
+        <button data-reset class="reset">Reset</button>
+      </section>
+    </main class="container">
+
+  </div>
+</body>
+
+</html>
