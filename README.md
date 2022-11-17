@@ -29,8 +29,7 @@ Users should be able to:
 
 I made it the same as the challenge. I did change where the logo going to be. I move it to the left because i wanna add in a color picker at the right. 
 There is still things I need to do in this project.
-- Add local storage to save the color pick choice
-- Animation to hover
+- Animation to hover (so it can look cool?)
 - Some other details
 
 ### Built with
@@ -49,7 +48,7 @@ I spend a lot of time thinking how to deal with the input and button press for t
 
 ### Useful resources
 
-- [Kevin](https://youtu.be/fyuao3G-2qg) - I saw this color picker and had to try it. I wanna learn more about local host instead of just copy and paste so I left it blank to let me work on it alone in the future.
+- [theme picker](https://youtu.be/fyuao3G-2qg) - I saw this color picker and had to try it. (reason why I added in the color picker)
 
 ## Author
 

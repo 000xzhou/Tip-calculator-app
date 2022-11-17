@@ -135,4 +135,33 @@ resetButton.addEventListener('click', () => {
 })
 
 
+// get all the inputs with the name of theme and set it to colorThemes
+const colorThemes = document.querySelectorAll('[name="theme"]')
+
+// get which theme is got checked and send the id to local stoarge
+colorThemes.forEach(themeOptions => {
+  themeOptions.addEventListener('click', () => {
+    storeTheme(themeOptions.id)
+  })
+})
+
 // add to local storage 
+function storeTheme(theme) {
+  localStorage.setItem("theme", theme)
+}
+
+// get the theme from store
+function getTheme() {
+  localStorage.getItem("theme")
+
+  // checking which theme we getting and find the theme which have the same id
+  colorThemes.forEach(themeOptions => {
+    if (themeOptions.id === localStorage.getItem("theme")) {
+      // checked that theme
+      themeOptions.checked = true
+    }
+  })
+}
+
+// get theme on load
+document.onload = getTheme()
