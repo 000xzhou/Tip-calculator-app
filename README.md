@@ -53,5 +53,5 @@ I spend a lot of time thinking how to deal with the input and button press for t
 ## Author
 
 - Website - [XZ](https://github.com/000xzhou)
-- Frontend Mentor - [@HazukiMiki](https://www.frontendmentor.io/profile/HazukiMiki)
+- Frontend Mentor - [@000xzhou](https://www.frontendmentor.io/profile/000xzhou)
 
